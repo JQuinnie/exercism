@@ -18,17 +18,12 @@ class HighScores
   end
 
   def report
-    msg = "Your latest score was #{latest}. "
-    personal_best_check(msg)
+    "Your latest score was #{latest}. #{personal_best_check}"
   end
 
   private
 
-  def personal_best_check(msg)
-    if latest == personal_best
-      msg + "That's your personal best!"
-    elsif latest < personal_best
-      msg + "That's #{personal_best - latest} short of your personal best!"
-    end
+  def personal_best_check
+    latest == personal_best ? "That's your personal best!" : "That's #{personal_best - latest} short of your personal best!"
   end
 end
