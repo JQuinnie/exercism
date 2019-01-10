@@ -1,30 +1,28 @@
 class HighScores
+  attr_accessor :scores
+
   def initialize(scores)
     @scores = scores
   end
 
-  def scores
-    @scores
-  end
-
   def latest
-    @scores.last
+    scores.last
   end
 
   def personal_best
-    @scores.max
+    scores.max
   end
 
   def personal_top
-    @scores.sort.reverse.first(3)
+    scores.max(3)
   end
 
   def report
-    latest = @scores.last
+    msg = "Your latest score was #{latest}. "
     if latest == personal_best
-      "Your latest score was #{latest}. That's your personal best!"
+      msg + "That's your personal best!"
     elsif latest < personal_best
-      "Your latest score was #{latest}. That's #{personal_best - latest} short of your personal best!"
+      msg + "That's #{personal_best - latest} short of your personal best!"
     end
   end
 end
