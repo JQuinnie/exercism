@@ -13,10 +13,6 @@ class Matrix
   end
 
   def column(rows)
-    
+    rows.transpose
   end
 end
-
-# array = "1 2\n10 20".split("\n")
-# array2 = array.map { |row| row.split(" ") }
-# array_to_string = array2.map {|row| row.map {|cell| cell.to_i}}
